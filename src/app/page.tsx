@@ -252,7 +252,7 @@ export default function HomePage() {
 
               <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
                 <Link
-                  href="/services"
+                  href={`/services/${srv.slug}`}
                   className="text-xs font-bold text-[#ff5e14] hover:text-[#004b87] flex items-center gap-1 transition-colors"
                 >
                   Learn details <ChevronRight className="w-3.5 h-3.5" />
@@ -425,22 +425,22 @@ export default function HomePage() {
                 Our mobile network covers all residential ZIP codes throughout central Anaheim (92801, 92802, 92804, 92805, 92806, 92807, 92808, 92809). In addition, we have dedicated mobile plumbing teams stationed across nearby markets:
               </p>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 my-4 text-xs font-semibold text-[#004b87]">
-                <Link href="/locations#anaheim-hills" className="p-2.5 bg-slate-50 rounded-lg border border-slate-200 hover:border-[#ff5e14] block">
+                <Link href="/locations/anaheim-hills" className="p-2.5 bg-slate-50 rounded-lg border border-slate-200 hover:border-[#ff5e14] block">
                   • Anaheim Hills (92807, 92808)
                 </Link>
-                <Link href="/locations#fullerton" className="p-2.5 bg-slate-50 rounded-lg border border-slate-200 hover:border-[#ff5e14] block">
+                <Link href="/locations/fullerton" className="p-2.5 bg-slate-50 rounded-lg border border-slate-200 hover:border-[#ff5e14] block">
                   • Fullerton (92831–92835)
                 </Link>
-                <Link href="/locations#orange" className="p-2.5 bg-slate-50 rounded-lg border border-slate-200 hover:border-[#ff5e14] block">
+                <Link href="/locations/orange" className="p-2.5 bg-slate-50 rounded-lg border border-slate-200 hover:border-[#ff5e14] block">
                   • Orange (92865–92869)
                 </Link>
-                <Link href="/locations#garden-grove" className="p-2.5 bg-slate-50 rounded-lg border border-slate-200 hover:border-[#ff5e14] block">
+                <Link href="/locations/garden-grove" className="p-2.5 bg-slate-50 rounded-lg border border-slate-200 hover:border-[#ff5e14] block">
                   • Garden Grove (92840–92845)
                 </Link>
-                <Link href="/locations#brea" className="p-2.5 bg-slate-50 rounded-lg border border-slate-200 hover:border-[#ff5e14] block">
+                <Link href="/locations/brea" className="p-2.5 bg-slate-50 rounded-lg border border-slate-200 hover:border-[#ff5e14] block">
                   • Brea (92821, 92823)
                 </Link>
-                <Link href="/locations#placentia" className="p-2.5 bg-slate-50 rounded-lg border border-slate-200 hover:border-[#ff5e14] block">
+                <Link href="/locations/placentia" className="p-2.5 bg-slate-50 rounded-lg border border-slate-200 hover:border-[#ff5e14] block">
                   • Placentia (92870)
                 </Link>
               </div>
@@ -499,7 +499,7 @@ export default function HomePage() {
                   {LOCATIONS.map((loc) => (
                     <Link
                       key={loc.id}
-                      href={`/locations#${loc.slug}`}
+                      href={`/locations/${loc.slug}`}
                       className="text-xs bg-slate-800 hover:bg-[#ff5e14] text-slate-300 hover:text-white px-2.5 py-1 rounded transition-colors font-semibold"
                     >
                       {loc.name}

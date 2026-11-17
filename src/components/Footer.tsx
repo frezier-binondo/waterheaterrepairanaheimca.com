@@ -81,32 +81,32 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/services#repair" className="hover:text-white transition-colors">
+                <Link href="/services/water-heater-repair" className="hover:text-white transition-colors">
                   Water Heater Repair (Gas & Electric)
                 </Link>
               </li>
               <li>
-                <Link href="/services#emergency" className="hover:text-white transition-colors">
+                <Link href="/services/emergency-water-heater-repair" className="hover:text-white transition-colors">
                   Emergency Burst Tank Dispatch
                 </Link>
               </li>
               <li>
-                <Link href="/services#tankless" className="hover:text-white transition-colors">
+                <Link href="/services/tankless-water-heater-repair" className="hover:text-white transition-colors">
                   Tankless Descaling & Repairs
                 </Link>
               </li>
               <li>
-                <Link href="/services#replacement" className="hover:text-white transition-colors">
+                <Link href="/services/water-heater-replacement" className="hover:text-white transition-colors">
                   Water Heater Replacement & Codes
                 </Link>
               </li>
               <li>
-                <Link href="/services#install" className="hover:text-white transition-colors">
+                <Link href="/services/water-heater-installation" className="hover:text-white transition-colors">
                   Heat Pump & Low-NOx Installs
                 </Link>
               </li>
               <li>
-                <Link href="/services#commercial" className="hover:text-white transition-colors">
+                <Link href="/services/commercial-water-heater-repair" className="hover:text-white transition-colors">
                   Commercial Boiler Systems
                 </Link>
               </li>
@@ -125,32 +125,32 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/locations#anaheim-hills" className="hover:text-white transition-colors">
+                <Link href="/locations/anaheim-hills" className="hover:text-white transition-colors">
                   Anaheim Hills (92807, 92808)
                 </Link>
               </li>
               <li>
-                <Link href="/locations#fullerton" className="hover:text-white transition-colors">
+                <Link href="/locations/fullerton" className="hover:text-white transition-colors">
                   Fullerton (92831–92835)
                 </Link>
               </li>
               <li>
-                <Link href="/locations#orange" className="hover:text-white transition-colors">
+                <Link href="/locations/orange" className="hover:text-white transition-colors">
                   Orange (92865–92869)
                 </Link>
               </li>
               <li>
-                <Link href="/locations#garden-grove" className="hover:text-white transition-colors">
+                <Link href="/locations/garden-grove" className="hover:text-white transition-colors">
                   Garden Grove (92840–92845)
                 </Link>
               </li>
               <li>
-                <Link href="/locations#brea" className="hover:text-white transition-colors">
+                <Link href="/locations/brea" className="hover:text-white transition-colors">
                   Brea (92821, 92823)
                 </Link>
               </li>
               <li>
-                <Link href="/locations#placentia" className="hover:text-white transition-colors">
+                <Link href="/locations/placentia" className="hover:text-white transition-colors">
                   Placentia (92870)
                 </Link>
               </li>

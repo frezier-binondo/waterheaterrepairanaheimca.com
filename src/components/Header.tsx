@@ -159,7 +159,7 @@ export default function Header() {
                   {SERVICES.map((srv) => (
                     <Link
                       key={srv.id}
-                      href={`/services#${srv.category === "repair" ? "repair" : srv.category === "emergency" ? "emergency" : srv.category === "commercial" ? "commercial" : "replacement"}`}
+                      href={`/services/${srv.slug}`}
                       onClick={() => setServicesDropdown(false)}
                       className="p-2.5 rounded-lg hover:bg-orange-50/70 hover:text-[#ff5e14] transition-colors group flex items-start gap-2.5"
                     >
@@ -195,40 +195,21 @@ export default function Header() {
                 <div className="absolute top-full left-0 w-72 bg-white rounded-b-xl shadow-2xl border-t-4 border-[#ff5e14] py-2 z-50 text-slate-800">
                   <Link
                     href="/locations"
+                    onClick={() => setLocationsDropdown(false)}
                     className="block px-4 py-2 text-xs font-black uppercase text-[#ff5e14] bg-orange-50 border-b border-orange-100"
                   >
                     North Orange County Hubs →
                   </Link>
-                  <Link
-                    href="/locations#anaheim-hills"
-                    className="block px-4 py-2 text-xs font-semibold hover:bg-slate-50 hover:text-[#ff5e14]"
-                  >
-                    Anaheim Hills (92807, 92808)
-                  </Link>
-                  <Link
-                    href="/locations#fullerton"
-                    className="block px-4 py-2 text-xs font-semibold hover:bg-slate-50 hover:text-[#ff5e14]"
-                  >
-                    Fullerton (92831–92835)
-                  </Link>
-                  <Link
-                    href="/locations#orange"
-                    className="block px-4 py-2 text-xs font-semibold hover:bg-slate-50 hover:text-[#ff5e14]"
-                  >
-                    Orange (92865–92869)
-                  </Link>
-                  <Link
-                    href="/locations#garden-grove"
-                    className="block px-4 py-2 text-xs font-semibold hover:bg-slate-50 hover:text-[#ff5e14]"
-                  >
-                    Garden Grove (92840–92845)
-                  </Link>
-                  <Link
-                    href="/locations#brea"
-                    className="block px-4 py-2 text-xs font-semibold hover:bg-slate-50 hover:text-[#ff5e14]"
-                  >
-                    Brea & Placentia
-                  </Link>
+                  {LOCATIONS.map((loc) => (
+                    <Link
+                      key={loc.id}
+                      href={`/locations/${loc.slug}`}
+                      onClick={() => setLocationsDropdown(false)}
+                      className="block px-4 py-2 text-xs font-semibold hover:bg-slate-50 hover:text-[#ff5e14]"
+                    >
+                      {loc.name} ({loc.zipCodes.split(",")[0].trim()})
+                    </Link>
+                  ))}
                 </div>
               )}
             </div>
@@ -300,7 +281,7 @@ export default function Header() {
               {SERVICES.map((srv) => (
                 <Link
                   key={srv.id}
-                  href={`/services#${srv.category === "repair" ? "repair" : srv.category === "emergency" ? "emergency" : srv.category === "commercial" ? "commercial" : "replacement"}`}
+                  href={`/services/${srv.slug}`}
                   onClick={() => setMobileMenuOpen(false)}
                   className="py-1 text-xs text-slate-300 hover:text-[#ff5e14] flex items-center gap-1.5"
                 >
@@ -310,13 +291,29 @@ export default function Header() {
               ))}
             </div>
           </div>
-          <Link
-            href="/locations"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-sm font-bold border-b border-slate-800"
-          >
-            Locations (Anaheim & 5 Surrounding Cities)
-          </Link>
+          <div className="border-b border-slate-800 pb-2">
+            <Link
+              href="/locations"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-2 text-sm font-bold text-white flex items-center justify-between"
+            >
+              <span>Locations (Anaheim & 5 Surrounding Cities)</span>
+              <span className="text-[#ff5e14] text-xs">View All →</span>
+            </Link>
+            <div className="grid grid-cols-1 gap-1 pl-3 pt-1 pb-2">
+              {LOCATIONS.map((loc) => (
+                <Link
+                  key={loc.id}
+                  href={`/locations/${loc.slug}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="py-1 text-xs text-slate-300 hover:text-[#ff5e14] flex items-center gap-1.5"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#ff5e14]"></span>
+                  <span>{loc.name}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
           <Link
             href="/blog"
             onClick={() => setMobileMenuOpen(false)}
