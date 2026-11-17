@@ -108,12 +108,18 @@ export default async function LocationDetailPage({ params }: LocationPageProps) 
               <Image
                 src={
                   location.slug === "anaheim-hills"
-                    ? "/images/anaheim-hills.jpg"
+                    ? "/images/water-heater-tank.jpg"
                     : location.slug === "fullerton"
-                    ? "/images/fullerton-homes.jpg"
-                    : "/images/garden-grove-neighborhood.jpg"
+                    ? "/images/plumbing-fitting.jpg"
+                    : location.slug === "orange"
+                    ? "/images/water-heater-repair.jpg"
+                    : location.slug === "garden-grove"
+                    ? "/images/plumber-wrench.jpg"
+                    : location.slug === "brea"
+                    ? "/images/tankless-water-heater.jpg"
+                    : "/images/pipes-valves.jpg"
                 }
-                alt={`Water heater service in ${location.name} CA`}
+                alt={`Water heater service and repairs in ${location.name} CA`}
                 width={1200}
                 height={500}
                 className="w-full h-64 sm:h-80 object-cover"

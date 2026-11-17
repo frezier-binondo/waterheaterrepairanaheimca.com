@@ -111,6 +111,16 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 src={
                   service.slug.includes("tankless")
                     ? "/images/tankless-water-heater.jpg"
+                    : service.slug.includes("commercial")
+                    ? "/images/boiler-heating.jpg"
+                    : service.slug.includes("leak") || service.slug.includes("emergency")
+                    ? "/images/pipes-valves.jpg"
+                    : service.slug.includes("installation") || service.slug.includes("replacement")
+                    ? "/images/water-heater-tank.jpg"
+                    : service.slug.includes("maintenance")
+                    ? "/images/hard-water-scale.jpg"
+                    : service.slug.includes("thermostat") || service.slug.includes("pilot")
+                    ? "/images/plumbing-fitting.jpg"
                     : "/images/water-heater-repair.jpg"
                 }
                 alt={`${service.name} in Anaheim CA`}

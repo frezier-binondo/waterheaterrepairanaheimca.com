@@ -102,8 +102,8 @@ export default function LocationsPage() {
 
               <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
                 <Image
-                  src="/images/anaheim-hills.jpg"
-                  alt="Anaheim Hills hillside residential community"
+                  src="/images/water-heater-tank.jpg"
+                  alt="High-capacity residential water heater installation in Anaheim Hills CA"
                   width={1200}
                   height={450}
                   className="w-full h-56 sm:h-64 object-cover"
@@ -138,8 +138,8 @@ export default function LocationsPage() {
 
               <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
                 <Image
-                  src="/images/fullerton-homes.jpg"
-                  alt="Fullerton residential home plumbing service"
+                  src="/images/plumbing-fitting.jpg"
+                  alt="Fullerton water heater valve and pipe fitting repair"
                   width={1200}
                   height={450}
                   className="w-full h-56 sm:h-64 object-cover"
@@ -200,8 +200,8 @@ export default function LocationsPage() {
 
               <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
                 <Image
-                  src="/images/garden-grove-neighborhood.jpg"
-                  alt="Garden Grove residential neighborhood plumbing"
+                  src="/images/plumber-wrench.jpg"
+                  alt="Plumbing wrench tightening water heater flex connector in Garden Grove CA"
                   width={1200}
                   height={450}
                   className="w-full h-56 sm:h-64 object-cover"
