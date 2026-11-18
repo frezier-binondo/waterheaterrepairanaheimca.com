@@ -1,0 +1,387 @@
+{
+  "water-heater-repair": {
+    "serviceCategory": "Residential Diagnostics & Component Repair",
+    "techFocus": "Atmospheric Gas Burners, Dual Electric Elements, Thermocouples, Gas Valves & Expansion Tanks",
+    "diagnosticsSteps": [
+      "Comprehensive gas pressure, draft hood airflow, and 240V dual element electrical continuity resistance meter testing.",
+      "Precision thermal imaging and acoustic leak isolation along copper flex connectors, brass relief valves, and dielectric nipples.",
+      "Sediment level probe inspection inside the lower tank dome to assess calcification depth and burner heat transfer efficiency.",
+      "Sacrificial magnesium and aluminum anode rod wear calculation to verify tank wall integrity.",
+      "Water pressure regulation verification (PRV inspection) to confirm street line pressure remains below 75 PSI code limits."
+    ],
+    "commonFailures": [
+      {
+        "component": "Thermocouple / Flame Sensor Probe",
+        "symptom": "Pilot light lights but immediately extinguishes upon releasing knob",
+        "solution": "Cleaning carbon soot off probe or replacing with universal heavy-duty millivolt thermocouple."
+      },
+      {
+        "component": "Upper / Lower 4500W Electric Elements",
+        "symptom": "Shower starts lukewarm or hot water runs out in under 3 minutes",
+        "solution": "Drain lower tank sediment and install high-density screw-in low-watt density resistored elements."
+      },
+      {
+        "component": "Robertshaw / White-Rodgers Gas Control Valve",
+        "symptom": "Burner fails to ignite, status light flashes error code, or status LED remains unlit",
+        "solution": "Test thermopile voltage output (minimum 350mV); replace complete gas valve assembly if internal solenoid fails."
+      },
+      {
+        "component": "Temperature & Pressure (T&P) Relief Valve",
+        "symptom": "Continuous or intermittent hot water dripping from 3/4 inch copper discharge pipe",
+        "solution": "Check home water pressure and expansion tank bladder; replace defective 150 PSI / 210°F ASME-rated relief valve."
+      },
+      {
+        "component": "Dip Tube Calcification / Fracture",
+        "symptom": "Plastic particles in aerators or sudden loss of hot water delivery efficiency",
+        "solution": "Extract broken polypropylene dip tube and replace with anti-microbial curved diffuser tube."
+      }
+    ],
+    "anaheimInsights": "Anaheim homes in established neighborhoods such as West Anaheim, the Historic Colony, and the Resort District predominantly operate standard 40 to 50-gallon atmospheric gas water heaters. Due to the high mineral hardness of Orange County Groundwater Basin supplies, calcium scale builds up rapidly around burner bases, requiring precision flushing and element de-scaling to prevent tank seam fractures.",
+    "pricingBreakdown": "Typical component repair costs in Anaheim range from  to  for minor mechanical parts (thermocouples, element swaps, thermostat calibrations) including on-site labor and safety verification. Gas control valve replacements or extensive re-piping generally range between  and , always provided as an upfront written quote before work begins."
+  },
+  "emergency-water-heater-repair": {
+    "serviceCategory": "24/7 Rapid Priority Containment & Burst Tank Response",
+    "techFocus": "Active Flooding Containment, Gas Shutoff, Emergency Relief Valve Failures & Same-Day Replacements",
+    "diagnosticsSteps": [
+      "Immediate telephonic shut-off coaching: locating the overhead cold water shut-off gate/ball valve and gas shut-off cock.",
+      "Emergency technician dispatch with live GPS arrival tracking across Anaheim within 45 to 60 minutes.",
+      "On-site safety perimeter establishment: gas leak sniffing using combustible gas detectors and electrical breaker de-energization.",
+      "High-capacity submersible sump pumping and water extraction to protect finished subflooring, carpets, and drywall.",
+      "Emergency inventory mobilization: immediate staging of replacement 40, 50, or 75-gallon Bradford White or Rheem tanks."
+    ],
+    "commonFailures": [
+      {
+        "component": "Ruptured Bottom Steel Tank Seam",
+        "symptom": "Gallons of hot water rapidly flooding garage, utility closet, or living room floor",
+        "solution": "Immediate supply shutoff; tank cannot be welded or patched safely; execute same-day permitted tank swap."
+      },
+      {
+        "component": "Stuck Open T&P Relief Valve",
+        "symptom": "Violent steaming and roaring scalding water dumping through exterior discharge line",
+        "solution": "Emergency pressure relief, cool down tank, test expansion tank bladder, and replace blown relief valve."
+      },
+      {
+        "component": "Natural Gas Odor Near Water Heater",
+        "symptom": "Sulfur / rotten-egg gas smell, hissing sound near burner or flex connector",
+        "solution": "Evacuate residence, call SoCalGas or 911, and have certified plumber replace cracked yellow flex line or control valve."
+      },
+      {
+        "component": "Electrical Arcing / Melting Breaker Wire",
+        "symptom": "Burning plastic smell, charred upper panel, repeatedly tripped 30A double-pole breaker",
+        "solution": "Cut 240V power at main service panel, replace melted Romex wiring, high-limit ECO switch, and thermostat."
+      }
+    ],
+    "anaheimInsights": "In dense residential tracts and multi-family communities across Anaheim and Anaheim Hills, an emergency burst tank can cause thousands of dollars in structural drywall and framing damage within 30 minutes. Our emergency dispatch operators coach callers on water and utility cut-offs prior to technician arrival, preventing catastrophic property flooding.",
+    "pricingBreakdown": "Emergency dispatch calls are prioritized 24 hours a day. Technicians provide clear upfront pricing before initiating emergency water extraction, isolation, or replacement. Weekend and after-hours priority dispatch fees are always disclosed transparently."
+  },
+  "tankless-water-heater-repair": {
+    "serviceCategory": "On-Demand Tankless Diagnostics & Descaling Maintenance",
+    "techFocus": "Rinnai, Navien, Noritz, Rheem, Bosch & Takagi Condensing & Non-Condensing Units",
+    "diagnosticsSteps": [
+      "Digital motherboard diagnostic code retrieval and real-time combustion performance analysis.",
+      "Dual copper and stainless steel heat exchanger inspection for calcium mineral scale occlusion.",
+      "Flame sensor rod, igniter electrode gap, and electrical spark voltage resistance testing.",
+      "Exhaust vent and fresh air intake screen clearance inspection (checking for bird nests, lint, or backdrafting).",
+      "Gas dynamic flow pressure testing under maximum BTU draw (hot water bath + laundry simultaneously)."
+    ],
+    "commonFailures": [
+      {
+        "component": "Primary Copper Heat Exchanger Scale",
+        "symptom": "Error Code 11, 12, or E012; unit shuts down after 30 seconds of shower operation",
+        "solution": "Connect circulation pump with food-grade descaling virgin acid; circulate for 60-90 minutes to dissolve calcium."
+      },
+      {
+        "component": "Combustion Flame Rod / Igniter Carbonization",
+        "symptom": "Clicking ignition sound repeated 3 times followed by lockout error code",
+        "solution": "Remove flame rod assembly, clean with fine emery cloth, or replace worn igniter electrode."
+      },
+      {
+        "component": "Water Flow Turbine / Impeller Sensor",
+        "symptom": "No error code but heater does not detect water flow when faucets are opened",
+        "solution": "Clean debris from cold water inlet screen filter or replace stuck magnetic flow sensor turbine."
+      },
+      {
+        "component": "Exhaust Venting Obstruction / Condensate Blockage",
+        "symptom": "Error Code 10, 99, or acidic condensate dripping onto internal circuit board",
+        "solution": "Clear PVC/polypropylene exhaust runs, clean condensate trap, and verify concentric vent pitch."
+      }
+    ],
+    "anaheimInsights": "Orange County’s heavy mineral hardness (up to 22 grains per gallon) is especially punitive to tankless heat exchangers. Without annual descaling flushes, micro-channels within the copper coils become blocked, causing thermal stress, loud humming noises, and premature heat exchanger burnouts.",
+    "pricingBreakdown": "Annual tankless maintenance flushes typically cost  to . Component repairs such as flow sensor replacements, flame rod tune-ups, or circuit board replacements generally range between  and  depending on brand and parts availability."
+  },
+  "water-heater-installation": {
+    "serviceCategory": "Code-Compliant Residential & Commercial Water Heater Installation",
+    "techFocus": "Atmospheric Gas, Direct Vent, 240V Electric, Hybrid Heat Pump & Tankless Conversions",
+    "diagnosticsSteps": [
+      "Comprehensive household peak-hour hot water demand calculation (Gallons Per Minute and First-Hour Rating).",
+      "Gas line sizing verification (checking whether existing 1/2 inch or 3/4 inch supply meets high-BTU load demands).",
+      "Venting path inspection: checking B-vent chimney clearances, pitch, and combustion air supply.",
+      "City of Anaheim plumbing permit processing and municipal inspection scheduling.",
+      "California Seismic Zone 4 compliance: dual heavy-gauge steel earthquake straps bolted to framing studs."
+    ],
+    "commonFailures": [
+      {
+        "component": "Improper Seismic Earthquake Strapping",
+        "symptom": "Unstrapped or single-strap tanks risk toppling and rupturing gas lines in an earthquake",
+        "solution": "Install double heavy-duty California-approved seismic strapping kits anchored into solid wood wall studs."
+      },
+      {
+        "component": "Missing Thermal Expansion Tank",
+        "symptom": "Relief valve continually drips due to thermal pressure spikes on closed backflow meters",
+        "solution": "Install and pre-pressurize a 2.0 or 4.5 gallon potable expansion tank on the cold water inlet."
+      },
+      {
+        "component": "Non-Compliant Gas Burners (High-NOx)",
+        "symptom": "Units violating local Southern California air quality rules fail city building inspections",
+        "solution": "Ensure all gas water heaters installed comply with South Coast AQMD Rule 1121 ultra-low NOx standards."
+      },
+      {
+        "component": "Inadequate Combustion Air Venting",
+        "symptom": "Soot marks on draft hood, potential carbon monoxide backdrafting into the living space",
+        "solution": "Re-pipe exhaust B-venting with correct vertical rise and verify dual high/low combustion air vents."
+      }
+    ],
+    "anaheimInsights": "Installing a water heater in Anaheim requires adherence to strict California Plumbing Code and Title 24 energy mandates. Our network contractors pull all required permits through the City of Anaheim Building Division, coordinate haul-away of old equipment, and ensure clean inspection sign-offs.",
+    "pricingBreakdown": "Standard like-for-like atmospheric gas tank installations typically range from ,400 to ,400 including standard unit, permits, seismic strapping, expansion tank, and haul-away. Tankless conversions and heat pump upgrades vary based on electrical panel and gas line requirements."
+  },
+  "water-heater-replacement": {
+    "serviceCategory": "Same-Day Tank & Tankless Replacement with Eco-Friendly Haul Away",
+    "techFocus": "End-of-Life Unit Extraction, Upgraded Thermal Efficiency & Turnkey Plumbing Upgrades",
+    "diagnosticsSteps": [
+      "Evaluation of existing tank serial number to verify age, warranty status, and glass lining failure.",
+      "Inspection of existing water shut-off valve, copper flex connectors, and gas shut-off cock.",
+      "Complete sanitary drainage of contaminated, sediment-filled water from failing tank.",
+      "Removal and eco-friendly metal recycling of the decommissioned water heater.",
+      "Installation of high-efficiency replacement with new full-port brass ball valves and dielectric unions."
+    ],
+    "commonFailures": [
+      {
+        "component": "Corroded Steel Tank Base (Rusted Shell)",
+        "symptom": "Brown rust streaks running down tank jacket, pooling water at base",
+        "solution": "Tank integrity is permanently compromised; execute complete unit replacement."
+      },
+      {
+        "component": "Old Gate Valve Seized Shut or Broken Stem",
+        "symptom": "Inability to isolate water supply during routine maintenance or leaks",
+        "solution": "Replace failing multi-turn gate valve with commercial-grade 1/4-turn solid brass ball valve."
+      },
+      {
+        "component": "Deteriorated Dielectric Nipples / Galvanic Corrosion",
+        "symptom": "Heavy green and white oxidation crust on inlet/outlet water pipes",
+        "solution": "Install new dielectric transition nipples to stop dissimilar metal electrolysis between copper and steel."
+      }
+    ],
+    "anaheimInsights": "Most traditional tank water heaters in Orange County have an expected service life of 8 to 12 years. If your Anaheim water heater is over a decade old and requires costly part repairs, investing in a high-efficiency replacement provides greater reliability, reduced gas consumption, and peace of mind.",
+    "pricingBreakdown": "Replacement packages include removal, delivery of a premium brand tank (Bradford White, Rheem, A.O. Smith), code-mandated earthquake strapping, new brass valves, thermal expansion tank, permit fees, and disposal of the old unit."
+  },
+  "gas-water-heater-repair": {
+    "serviceCategory": "Natural Gas Burner Diagnostics & Safety Certifications",
+    "techFocus": "Thermocouples, Thermopiles, Gas Control Valves, Draft Hoods & Burner Chambers",
+    "diagnosticsSteps": [
+      "Combustible gas leak sniffing along all threaded iron pipe joints and flex connectors.",
+      "Pilot burner flame inspection: checking for crisp blue flame vs. sluggish yellow carbonizing flame.",
+      "Millivolt generator and thermocouple electrical output measurement under active pilot load.",
+      "Carbon monoxide (CO) emission check around draft hood and flue baffle.",
+      "Air intake flame arrestor screen cleaning to remove lint and dust blankets."
+    ],
+    "commonFailures": [
+      {
+        "component": "Blocked Flame Arrestor Screen (FVIR System)",
+        "symptom": "Burner starves for oxygen, shuts off after 5 minutes, viewing glass sooted",
+        "solution": "Vacuum and chemically degrease the lower intake screen beneath the combustion chamber."
+      },
+      {
+        "component": "Failing Thermopile (Self-Powered Electronic Valves)",
+        "symptom": "Status LED does not blink, valve refuses to open main gas orifice",
+        "solution": "Test output; if below 350mV under flame, replace pilot assembly and thermopile."
+      },
+      {
+        "component": "Draft Hood Spillage / Improper Chimney Draft",
+        "symptom": "Melting plastic grommets on top of heater, flue gases venting into garage",
+        "solution": "Inspect and clear B-vent flue pipe obstruction and adjust pitch to restore negative draft pressure."
+      }
+    ],
+    "anaheimInsights": "Natural gas water heaters are the most prevalent heating system in Anaheim residential properties. Because natural gas involves combustion risks, all repairs must be handled by licensed plumbers who verify proper draft, air supply, and 100% leak-free gas connections.",
+    "pricingBreakdown": "Gas water heater repair costs typically range from  to  for burner cleanings, pilot replacements, and thermocouples. Gas valve replacements generally run between  and ."
+  },
+  "electric-water-heater-repair": {
+    "serviceCategory": "240V Electric Storage Tank Element & Thermostat Servicing",
+    "techFocus": "Upper & Lower High-Density Elements, Dual Thermostats & High-Limit Reset Switches",
+    "diagnosticsSteps": [
+      "Lockout-tagout 240V circuit de-energization and voltage verification across L1 and L2 terminals.",
+      "Resistance continuity testing (Ohms test) on upper and lower heating elements (normal: 12-16 Ohms).",
+      "Dual thermostat calibration check to confirm proper sequential power transfer from upper to lower.",
+      "Emergency Cut-Off (ECO) high-limit switch inspection for thermal tripping.",
+      "Wiring harness integrity check for melted insulation or loose terminal screws."
+    ],
+    "commonFailures": [
+      {
+        "component": "Burned-Out Lower Heating Element",
+        "symptom": "Water gets warm but never fully hot; runs out almost immediately",
+        "solution": "Drain tank below element level, unscrew failed 4500W element, and install new low-watt density element."
+      },
+      {
+        "component": "Failed Upper Thermostat (Logic Hub)",
+        "symptom": "Zero hot water in the home; lower element never receives electrical current",
+        "solution": "Replace complete upper thermostat assembly and reset high-limit button."
+      },
+      {
+        "component": "Loose Terminal Wire Arcing",
+        "symptom": "Breaker trips in main electrical panel; burnt plastic smell near access panels",
+        "solution": "Trim back damaged wire, re-crimp high-temperature terminals, and torque screws to spec."
+      }
+    ],
+    "anaheimInsights": "Electric water heaters are common in Anaheim condominiums, ADUs, and multi-family units where gas venting is unavailable. With 240V electricity submerged in water, professional diagnostic tools are essential to prevent electrical shock or house fires.",
+    "pricingBreakdown": "Electric water heater repairs generally cost between  and  for element and thermostat replacements. Electrical repairs are fast, clean, and usually completed within 60 minutes on site."
+  },
+  "water-heater-maintenance": {
+    "serviceCategory": "Annual Preventative Scale Flushing & Anode Rod Renewal",
+    "techFocus": "High-Pressure Hydro-Flushing, Sacrificial Anodes & Safety Valve Certification",
+    "diagnosticsSteps": [
+      "Thermal efficiency audit and temperature verification at hot water fixtures.",
+      "High-pressure power flush using commercial transfer pumps to evacuate calcified sediment beds.",
+      "Extraction and physical measurement of sacrificial magnesium/aluminum anode rod diameter.",
+      "Manual lift testing of Temperature & Pressure (T&P) safety relief valve.",
+      "Inspection of flexible supply lines, shutoff valves, gas connectors, and seismic straps."
+    ],
+    "commonFailures": [
+      {
+        "component": "Exhausted Sacrificial Anode Rod",
+        "symptom": "Anode core wire completely exposed; tank steel is now actively corroding",
+        "solution": "Unscrew 1-1/16 inch hex head and install new segmented magnesium or powered titanium anode rod."
+      },
+      {
+        "component": "Compacted Mineral Sediment Bed",
+        "symptom": "Heater rumbles like a freight train; lower drain valve completely clogged by pebbles",
+        "solution": "Break up sediment bed using curved agitation tools and power-flush tank under full street pressure."
+      },
+      {
+        "component": "Frozen T&P Relief Valve Mechanism",
+        "symptom": "Relief valve lever is seized shut, presenting dangerous over-pressurization risks",
+        "solution": "Replace seized relief valve with brand-new factory-calibrated 150 PSI / 210°F valve."
+      }
+    ],
+    "anaheimInsights": "Given the 15-22 grains of hardness in Anaheim water, annual maintenance is the single most effective way to protect your water heater warranty, cut energy bills by 15-25%, and prevent catastrophic tank ruptures.",
+    "pricingBreakdown": "Comprehensive annual maintenance visits in Anaheim cost between  and , bundling sediment flushing, anode rod inspection, and safety certifications."
+  },
+  "commercial-water-heater-repair": {
+    "serviceCategory": "Commercial & Multi-Family High-Capacity Heating Systems",
+    "techFocus": "High-Recovery Gas Tanks, Commercial Boilers, Recirculating Loops & Multi-Unit Tankless Racks",
+    "diagnosticsSteps": [
+      "Health department sanitation temperature compliance audit (ensuring 140°F+ dishwashing supply).",
+      "Electronic commercial combustion controller and staging sensor diagnostics.",
+      "Recirculation pump flow rate and check-valve operation verification.",
+      "High-BTU gas regulator and manifold pressure testing.",
+      "Expansion tank and backflow prevention certification."
+    ],
+    "commonFailures": [
+      {
+        "component": "Commercial Recirculation Pump Impeller Failure",
+        "symptom": "Distant guest rooms or kitchen fixtures take 5+ minutes to get hot water",
+        "solution": "Replace worn Taco/Bell & Gossett commercial recirculating pump and clean inline check valves."
+      },
+      {
+        "component": "Commercial Boiler Burner Ignition Lockout",
+        "symptom": "Complete loss of hot water across hotel, apartment complex, or commercial laundry",
+        "solution": "Emergency dispatch: diagnose electronic ignition module, draft inducer blower, and gas solenoid."
+      },
+      {
+        "component": "Heavy Mineral Scale in Commercial Flues",
+        "symptom": "Excessive thermal exhaust temperatures, safety trip-outs during peak service hours",
+        "solution": "Perform commercial acid de-scaling and mechanical tube brushing on heat exchangers."
+      }
+    ],
+    "anaheimInsights": "Hotels surrounding the Anaheim Resort District and restaurants in downtown Anaheim cannot afford hot water downtime without facing immediate health department shutdowns. Our commercial plumbing pros provide priority commercial dispatch and flexible after-hours scheduling.",
+    "pricingBreakdown": "Commercial service rates depend on system tonnage and BTU ratings. We provide detailed written estimates and commercial maintenance contracts with dedicated response guarantees."
+  },
+  "water-heater-leak-repair": {
+    "serviceCategory": "Precision Water Heater Leak Isolation & Repair",
+    "techFocus": "Brass Drain Valves, Dielectric Unions, Flex Lines, Relief Discharge & Tank Seams",
+    "diagnosticsSteps": [
+      "Acoustic and dye tracing to determine exact origin of moisture (top fittings vs. bottom tank).",
+      "Inspection of cold water inlet and hot water outlet dielectric nipples.",
+      "Testing of plastic drain valves (often cracked from sediment flushing attempts).",
+      "Temperature & Pressure relief valve seat inspection for thermal weeping.",
+      "Main tank body integrity check to rule out interior shell rupture."
+    ],
+    "commonFailures": [
+      {
+        "component": "Factory Plastic Drain Valve Weeping",
+        "symptom": "Slow drip from garden hose threading at the bottom of the water heater",
+        "solution": "Drain unit and replace cheap plastic valve with heavy-duty full-port brass ball drain valve."
+      },
+      {
+        "component": "Corroded Copper Water Flex Connector",
+        "symptom": "Green copper oxide and pinhole spray at the top connections of the water heater",
+        "solution": "Install premium braided stainless steel or heavy corrugated copper flex lines with new rubber washers."
+      },
+      {
+        "component": "Failed Heating Element Gasket (Electric Units)",
+        "symptom": "Water weeping from behind the upper or lower thermostat access cover",
+        "solution": "De-energize 240V power, drain tank, remove element, and install brand-new EDPM rubber gasket."
+      }
+    ],
+    "anaheimInsights": "A leaking water heater in an Anaheim garage or interior closet must be diagnosed quickly. If the leak originates from fittings or valves, a low-cost repair saves the unit. If the tank itself is leaking, immediate replacement prevents catastrophic flooring damage.",
+    "pricingBreakdown": "Valve and fitting leak repairs typically cost between  and  including parts and labor. Tank seam leaks require replacement, for which full upfront options are provided on the spot."
+  },
+  "water-heater-thermostat-repair": {
+    "serviceCategory": "Water Heater Temperature Regulation & Thermostat Calibration",
+    "techFocus": "Electric Surface Thermostats, Gas Control Valve Sensors & ECO High-Limits",
+    "diagnosticsSteps": [
+      "Digital immersion thermometer testing at nearest hot water fixture (verifying 120°F standard).",
+      "Electric upper/lower thermostat mechanical bimetal contact snap testing.",
+      "Gas valve internal temperature bulb sensor resistance and voltage check.",
+      "High-limit Emergency Cut-Off (ECO) calibration to prevent dangerous scalding.",
+      "Inspection for thermal runaway or stuck contacts."
+    ],
+    "commonFailures": [
+      {
+        "component": "Stuck Electric Thermostat Contacts",
+        "symptom": "Water becomes boiling hot; T&P relief valve dumps steaming water on exterior",
+        "solution": "Immediately kill power and replace upper and lower thermostats with factory-calibrated controls."
+      },
+      {
+        "component": "Gas Control Thermostat Drift",
+        "symptom": "Water remains lukewarm despite dial being turned to Very Hot setting",
+        "solution": "Calibrate gas control valve temperature sensing rod or replace complete control module."
+      },
+      {
+        "component": "Tripped High-Limit ECO Switch",
+        "symptom": "Electric heater has no hot water until red reset button is manually clicked",
+        "solution": "Identify and replace shorted element or defective thermostat causing overheat trips."
+      }
+    ],
+    "anaheimInsights": "Overheated water creates a severe scald danger, especially in households with young children or elderly family members. Water at 140°F causes third-degree burns in just 5 seconds. Professional thermostat calibration ensures safe, consistent 120°F water delivery.",
+    "pricingBreakdown": "Electric thermostat replacements typically cost between  and . Gas valve thermostat repairs generally range from  to  depending on valve model."
+  },
+  "water-heater-pilot-light-repair": {
+    "serviceCategory": "Gas Water Heater Pilot Assembly & Igniter Servicing",
+    "techFocus": "Standing Pilots, Spark Igniters, Thermocouples, Thermopiles & Gas Orifices",
+    "diagnosticsSteps": [
+      "Inspection of pilot flame geometry: ensuring flame engulfs the top 3/8 inch of thermocouple.",
+      "Gas pressure check at the pilot tubing inlet to detect clogged orifices or kinked lines.",
+      "Millivolt generator output measurement using digital multi-meter.",
+      "Piezoelectric push-button spark igniter gap and ceramic insulator inspection.",
+      "Combustion chamber draft and air supply check to prevent pilot flame blow-out."
+    ],
+    "commonFailures": [
+      {
+        "component": "Clogged Pilot Orifice Jet",
+        "symptom": "Tiny yellow flame that blows out in the slightest draft or will not stay lit",
+        "solution": "Disassemble pilot burner tube, clear microscopic dust debris using compressed air, and reassemble."
+      },
+      {
+        "component": "Burned-Out Thermocouple Sensor",
+        "symptom": "Pilot lights when holding button down, but extinguishes the moment button is released",
+        "solution": "Replace worn thermocouple with new 30mV or 750mV heavy-duty universal probe."
+      },
+      {
+        "component": "Cracked Piezo Spark Ceramic",
+        "symptom": "No visible spark through inspection window when clicking igniter button",
+        "solution": "Replace manual spark igniter assembly and re-gap electrode."
+      }
+    ],
+    "anaheimInsights": "A pilot light that repeatedly goes out is one of the most common plumbing service calls across Anaheim. Because natural gas is involved, attempts to force open valves with tape or improper relighting can cause dangerous gas accumulation.",
+    "pricingBreakdown": "Pilot light diagnostics, burner tube cleaning, and thermocouple replacements typically range between  and . Most repairs are completed within 45 minutes on site."
+  }
+}
