@@ -2,51 +2,211 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import { Phone, Wrench, Flame, AlertTriangle, ShieldCheck, Clock, CheckCircle2, ArrowRight, Zap, ExternalLink } from "lucide-react";
-import { BRAND_NAME, BRAND_PHONE, BRAND_PHONE_DISPLAY, SERVICES } from "@/lib/data";
+import {
+  Phone,
+  Wrench,
+  Flame,
+  AlertTriangle,
+  ShieldCheck,
+  Clock,
+  CheckCircle2,
+  ArrowRight,
+  Zap,
+  ExternalLink,
+  Droplet,
+  ChevronRight,
+  Settings,
+  Sparkles,
+  Building2,
+  Gauge
+} from "lucide-react";
+import { BRAND_NAME, BRAND_PHONE, BRAND_PHONE_DISPLAY, SERVICES, LOCATIONS } from "@/lib/data";
 import CallBanner from "@/components/CallBanner";
 import PhoneOnlyCTA from "@/components/PhoneOnlyCTA";
 
 export const metadata: Metadata = {
   title: "Water Heater Services in Anaheim, CA",
-  description: "Explore all 12 water heater services in Anaheim CA. Fast diagnosis, emergency leak repair, tankless descaling, gas/electric replacement. Call (456) 789-0123.",
+  description: "Explore all 12 water heater services in Anaheim CA: repair, emergency burst containment, tankless descaling, gas/electric repair, maintenance, commercial systems. Call (456) 789-0123.",
+};
+
+// Map each service slug to its dedicated custom photo
+const serviceImages: Record<string, string> = {
+  "water-heater-repair": "/images/water-heater-repair.jpg",
+  "emergency-water-heater-repair": "/images/water-heater-burst-leak.jpg",
+  "tankless-water-heater-repair": "/images/tankless-water-heater.jpg",
+  "water-heater-installation": "/images/water-heater-installation.jpg",
+  "water-heater-replacement": "/images/water-heater-tank.jpg",
+  "gas-water-heater-repair": "/images/pipes-valves.jpg",
+  "electric-water-heater-repair": "/images/boiler-heating.jpg",
+  "water-heater-maintenance": "/images/water-heater-maintenance.jpg",
+  "commercial-water-heater-repair": "/images/commercial-water-heater.jpg",
+  "water-heater-leak-repair": "/images/water-heater-burst-leak.jpg",
+  "water-heater-thermostat-repair": "/images/plumbing-fitting.jpg",
+  "water-heater-pilot-light-repair": "/images/plumber-wrench.jpg",
+};
+
+// Detailed paragraph content for each of the 12 services
+const serviceDescriptions: Record<string, { summary: string; bullets: string[]; highlights: string }> = {
+  "water-heater-repair": {
+    summary: "Most water heater failures in Anaheim do not require full unit replacements. From worn thermocouples and burned-out electric elements to failing gas control valves and sediment-clogged dip tubes, our network technicians diagnose the root cause on-site and execute same-day repairs using universal replacement components.",
+    bullets: [
+      "Precision diagnosis of upper & lower 240V electric heating elements and thermostats.",
+      "Testing of atmospheric gas burner assemblies, thermocouples, and thermopile millivolt output.",
+      "Inspection and replacement of Temperature & Pressure (T&P) safety relief valves.",
+      "Clearing of calcified brass drain valves and restoration of water temperature balance."
+    ],
+    highlights: "Trucks carry factory-certified parts for Bradford White, Rheem, A.O. Smith, and State water heaters."
+  },
+  "emergency-water-heater-repair": {
+    summary: "When an active water leak, burst tank, or hazardous gas odor occurs, waiting days for an appointment is not an option. Our Anaheim emergency dispatch unit routes on-call licensed plumbers with an average response time of 45 to 60 minutes across all Anaheim ZIP codes.",
+    bullets: [
+      "Immediate telephonic coaching on cold water shutoff and gas/electrical disconnection.",
+      "24/7 priority response for flooding tanks, scalding relief discharges, and combustion odors.",
+      "Water extraction and containment assistance to protect subfloors and drywall.",
+      "Same-day emergency tank or tankless replacements when tanks cannot be safely salvaged."
+    ],
+    highlights: "Priority dispatch active 24 hours a day, 7 days a week, 365 days a year across North Orange County."
+  },
+  "tankless-water-heater-repair": {
+    summary: "Tankless demand water heaters provide continuous hot water in a compact space, but Orange County's hard water creates heavy mineral scaling inside narrow heat exchanger tubes. Our factory-trained specialists handle complete descaling flushes, error code diagnostics, and burner calibrations.",
+    bullets: [
+      "Diagnostic code retrieval and clearing for Navien, Rinnai, Noritz, and Rheem units.",
+      "Submersible pump virgin-acid descaling to dissolve rock-hard calcium and limescale.",
+      "Flame rod carbon cleaning, igniter electrode gap adjustment, and intake air screen de-linting.",
+      "Resolution of the 'cold water sandwich' and water flow turbine sensor replacements."
+    ],
+    highlights: "Restores maximum thermal efficiency and eliminates fluctuating shower temperatures."
+  },
+  "water-heater-installation": {
+    summary: "A correct installation determines how efficiently and safely your water heater performs over its 10 to 15-year lifespan. Network contractors size each system to match your home's peak-hour demand and manage the entire City of Anaheim building permit and inspection process.",
+    bullets: [
+      "First-hour rating (FHR) and flow rate calculations tailored to household bathrooms.",
+      "California Seismic Zone 4 dual heavy-gauge earthquake strapping bolted to wood studs.",
+      "Thermal expansion tank installation on closed backflow-prevented municipal meters.",
+      "South Coast AQMD Rule 1121 compliant ultra-low NOx certified gas burners."
+    ],
+    highlights: "Turnkey installation packages include old unit disconnect, delivery, permit filing, and haul-away."
+  },
+  "water-heater-replacement": {
+    summary: "When a conventional storage tank passes the 10-year mark or develops rust corrosion through the outer steel shell, replacement is the safest, most economical path forward. We replace leaking, inefficient, or undersized units with high-efficiency ENERGY STAR models.",
+    bullets: [
+      "Safe, sanitary draining and disconnect of end-of-life water heaters.",
+      "Installation of premium 40, 50, or 75-gallon atmospheric gas or 240V electric storage tanks.",
+      "Upgraded 1/4-turn full-port brass ball valves and new stainless steel flex connectors.",
+      "Environmentally responsible haul-away and metal recycling of the old tank."
+    ],
+    highlights: "Most like-for-like replacements are completed in under 3 to 4 hours with same-day hot water restoration."
+  },
+  "gas-water-heater-repair": {
+    summary: "Natural gas water heaters require specialized combustion safety precautions. Our licensed C-36 plumbers inspect gas supply lines, draft hoods, pilot burner assemblies, and air intake screens to guarantee safe, efficient, and 100% code-compliant operation.",
+    bullets: [
+      "Combustible gas leak sniffing along all iron pipe threads and yellow gas flex lines.",
+      "Burner chamber cleaning and vacuuming of lint from the FVIR flame arrestor screen.",
+      "Draft hood chimney draft testing to eliminate carbon monoxide backdrafting risks.",
+      "Electronic Honeywell and Robertshaw gas control valve testing and calibration."
+    ],
+    highlights: "Safety-first repairs that eliminate gas odors, sooting, and pilot outages."
+  },
+  "electric-water-heater-repair": {
+    summary: "Electric water heaters are straightforward but involve high-voltage 240V electrical circuits in direct contact with water. If your electric unit has tripped its breaker, produces lukewarm water, or runs out of hot water in minutes, our technicians can diagnose and fix it rapidly.",
+    bullets: [
+      "Lockout-tagout 240V safety de-energization and multi-meter voltage verification.",
+      "Continuity and resistance testing of upper and lower 4500W heating elements.",
+      "Sequential calibration testing of upper logic thermostat and lower secondary thermostat.",
+      "Emergency Cut-Off (ECO) high-limit reset switch testing and terminal re-wiring."
+    ],
+    highlights: "Fast element replacements using high-grade, low-watt density resistored components."
+  },
+  "water-heater-maintenance": {
+    summary: "With Anaheim water hardness measuring between 15 and 22 grains per gallon, regular maintenance is the single most cost-effective way to prevent unexpected tank ruptures. Annual hydro-flushing and sacrificial anode rod inspections can add up to 5 years to your water heater's life.",
+    bullets: [
+      "High-pressure power flushing to evacuate calcified calcium pebble beds from the tank base.",
+      "Sacrificial magnesium and aluminum anode rod inspection and replacement.",
+      "Manual lift testing and seat clearance of the Temperature & Pressure relief valve.",
+      "Comprehensive multi-point visual inspection of gas lines, venting, and water connections."
+    ],
+    highlights: "Lowers monthly energy bills by 15-25% by restoring direct thermal transfer."
+  },
+  "commercial-water-heater-repair": {
+    summary: "Hot water outages in commercial properties—such as hotels near the Anaheim Convention Center, restaurants in Downtown Anaheim, laundromats, or apartment buildings—violate Orange County health codes and stop operations instantly. We offer high-capacity commercial solutions.",
+    bullets: [
+      "Service for commercial boilers, high-recovery gas tanks, and multi-unit tankless racks.",
+      "Diagnostic troubleshooting of commercial recirculation pumps and loop check valves.",
+      "Health department 140°F+ sanitization compliance testing for food service facilities.",
+      "Priority commercial emergency response with flexible after-hours scheduling."
+    ],
+    highlights: "Dedicated commercial technicians experienced in high-BTU and multi-tenant systems."
+  },
+  "water-heater-leak-repair": {
+    summary: "Not every water heater leak requires replacing the entire tank. Leaks originating from copper flex connectors, temperature relief discharge pipes, heating element gaskets, or drain valves can be repaired cost-effectively in a single visit.",
+    bullets: [
+      "Precision acoustic and dye tracing to differentiate between fitting leaks and tank ruptures.",
+      "Replacement of cheap factory plastic drain valves with heavy-duty full-port brass valves.",
+      "Installation of commercial-grade braided stainless steel flexible water supply lines.",
+      "New EPDM rubber gaskets for electric heating element flanges to eliminate weeping."
+    ],
+    highlights: "Honest leak evaluation: if it's repairable we fix it; if the tank shell is rusted we explain your options."
+  },
+  "water-heater-thermostat-repair": {
+    summary: "Water that is scalding hot presents severe burn hazards, while water that never gets hot enough makes daily chores frustrating. Our technicians test, recalibrate, and replace malfunctioning water heater thermostats across both gas and electric systems.",
+    bullets: [
+      "Digital immersion thermometer testing at fixtures to verify the safe 120°F target.",
+      "Electric upper and lower bimetal contact snap testing and calibration.",
+      "Gas control valve internal thermal bulb sensor resistance measurements.",
+      "High-limit reset switch replacement to prevent repeat emergency lockouts."
+    ],
+    highlights: "Eliminates dangerous temperature swings and protects your family from accidental scalding."
+  },
+  "water-heater-pilot-light-repair": {
+    summary: "A pilot light that repeatedly extinguishes is one of the most frequent gas water heater complaints in Anaheim. Our plumbers safely relight pilots, clean soot from burner orifices, and replace failing thermocouples or electronic igniters.",
+    bullets: [
+      "Disassembly and compressed-air cleaning of the microscopic pilot orifice jet.",
+      "Millivolt generator and heavy-duty thermocouple / thermopile replacements.",
+      "Piezoelectric push-button spark igniter repair and electrode gap adjustment.",
+      "Combustion air draft inspection to prevent outdoor wind drafts from blowing out pilot flames."
+    ],
+    highlights: "Safe, lasting pilot repairs that prevent hazardous unburned gas buildup."
+  }
 };
 
 export default function ServicesPage() {
   return (
-    <div className="w-full">
-      {/* Header Banner */}
-      <section className="bg-gradient-to-b from-[#0b2238] to-[#163654] text-white py-16 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
+    <div className="w-full bg-[#f4f7fa]">
+      {/* 1. Header Banner */}
+      <section className="bg-gradient-to-b from-[#0a192f] via-[#102a45] to-[#0a192f] text-white py-16 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto space-y-4 relative z-10">
-          <div className="inline-flex items-center gap-2 bg-orange-500/20 text-orange-400 text-xs sm:text-sm font-bold px-4 py-1.5 rounded-full border border-orange-500/30">
-            <Wrench className="w-4 h-4 text-orange-500" />
+          <div className="inline-flex items-center gap-2 bg-[#ff5e14]/20 text-[#ff5e14] text-xs sm:text-sm font-extrabold uppercase px-4 py-1.5 rounded-full border border-[#ff5e14]/30">
+            <Wrench className="w-4 h-4 text-[#ff5e14]" />
             <span>Comprehensive Water Heater Solutions</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-black tracking-tight">
-            Water Heater Services in <span className="text-[#f26522]">Anaheim, CA</span>
+            Water Heater Services in <span className="text-[#ff5e14]">Anaheim, CA</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            From quick thermocouple and thermostat swaps to whole-home tankless conversions and 24/7 emergency burst tank containment. Browse our 12 specialized water heater silos below.
+            Explore our complete 12-service directory. From quick thermocouple and element repairs to whole-home tankless conversions, commercial boilers, and 24/7 emergency burst tank containment.
           </p>
           <div className="pt-2">
             <a
               href={`tel:${BRAND_PHONE}`}
-              className="inline-flex items-center gap-2.5 bg-[#f26522] hover:bg-[#d85413] text-white px-7 py-3 rounded-full font-bold text-base shadow-lg transition-all animate-pulse-subtle"
+              className="inline-flex items-center gap-2.5 bg-[#ff5e14] hover:bg-[#e04800] text-white px-8 py-3.5 rounded-xl font-black text-lg shadow-xl transition-all animate-pulse-subtle"
             >
-              <Phone className="w-5 h-5" />
+              <Phone className="w-5 h-5 animate-bounce" />
               <span>Call Dispatch: {BRAND_PHONE_DISPLAY}</span>
             </a>
           </div>
         </div>
       </section>
 
-      {/* Main Content Area: 800+ Words locally optimized content */}
+      {/* 2. Main 12-Service Content Area */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Main Service Silo Listing & Descriptions */}
-          <div className="lg:col-span-8 content-body space-y-12 text-slate-700 leading-relaxed">
+          {/* Main Service Silo Listing: ALL 12 SERVICES PRESENT */}
+          <div className="lg:col-span-8 content-body space-y-16 text-slate-700 leading-relaxed bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-sm">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0b2238] mb-4">
+              <span className="text-xs uppercase font-extrabold tracking-widest text-[#ff5e14] block mb-2">
+                12 Dedicated Water Heater Solutions
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-[#0a192f] mb-4">
                 Specialized Water Heating Solutions for Anaheim Properties
               </h2>
               <p>
@@ -57,191 +217,118 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            {/* Service Category 1: General & Emergency Repair Silo */}
-            <div id="repair" className="space-y-6 pt-4 border-t border-slate-200">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center text-[#f26522]">
-                  <Wrench className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-[#0b2238]">
-                    1. Water Heater Repair & Diagnostics
-                  </h3>
-                  <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
-                    Gas, Electric, Thermostats, Elements & Valves
-                  </span>
-                </div>
-              </div>
+            {/* Render all 12 services in full detail */}
+            {SERVICES.map((srv, index) => {
+              const info = serviceDescriptions[srv.slug];
+              const imgPath = serviceImages[srv.slug] || "/images/water-heater-repair.jpg";
 
-              <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-md">
-                <Image
-                  src="/images/water-heater-repair.jpg"
-                  alt="Plumber repairing residential water heater in Anaheim"
-                  width={1200}
-                  height={500}
-                  className="w-full h-56 sm:h-72 object-cover"
-                />
-              </div>
-
-              <p>
-                Over 80% of water heater problems can be permanently resolved with precision component replacement. When a homeowner notices lukewarm water, a pilot light that repeatedly extinguishes, or strange rumbling sounds from the tank, our technicians immediately test the electrical resistance of the upper and lower elements, calibrate the thermostat, test gas supply pressure, and inspect the pilot orifice.
-              </p>
-              <p>
-                Our repair services strictly adhere to the{" "}
-                <a
-                  href="https://www.cslb.ca.gov/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 font-semibold text-[#f26522] underline"
+              return (
+                <article
+                  key={srv.id}
+                  id={srv.slug}
+                  className="space-y-6 pt-10 border-t border-slate-200 first:border-t-0 first:pt-0"
                 >
-                  California Contractors State License Board (CSLB) <ExternalLink className="w-3.5 h-3.5" />
-                </a>{" "}
-                safety guidelines for high-voltage and natural gas appliance servicing. We carry universal replacement thermocouples, 4500W heating elements, and Robertshaw/White-Rodgers gas control valves on trucks for instant same-day resolution.
-              </p>
-              <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 text-sm">
-                <strong>Related services in this silo:</strong>{" "}
-                <Link href="/services#emergency">Emergency Water Heater Repair</Link>,{" "}
-                <Link href="/services#tankless">Tankless Descaling Service</Link>, and{" "}
-                <Link href="/locations#anaheim-hills">Anaheim Hills Water Heater Repair</Link>.
-              </div>
-            </div>
+                  <div className="flex items-center justify-between flex-wrap gap-3">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center text-[#ff5e14] shrink-0 font-black text-lg">
+                        {index + 1}
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-black text-[#0a192f]">
+                          {srv.name} in Anaheim, CA
+                        </h3>
+                        <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block">
+                          Priority #{srv.priority} • {srv.category.toUpperCase()} SILO
+                        </span>
+                      </div>
+                    </div>
+                    <Link
+                      href={`/services/${srv.slug}`}
+                      className="inline-flex items-center gap-1.5 text-xs font-black uppercase text-[#ff5e14] bg-orange-50 hover:bg-[#ff5e14] hover:text-white px-3.5 py-1.5 rounded-lg border border-orange-200 transition-all"
+                    >
+                      <span>Dedicated Page</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
 
-            {/* Service Category 2: Emergency Burst Tank & Active Leaks */}
-            <div id="emergency" className="space-y-6 pt-4 border-t border-slate-200">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center text-red-600">
-                  <AlertTriangle className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-[#0b2238]">
-                    2. Emergency Burst Tank & Leak Dispatch
-                  </h3>
-                  <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
-                    24/7 Fast Containment & Water Cut-Off
-                  </span>
-                </div>
-              </div>
+                  {/* Service Photo */}
+                  <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+                    <Image
+                      src={imgPath}
+                      alt={`${srv.name} in Anaheim CA`}
+                      width={1200}
+                      height={500}
+                      className="w-full h-60 sm:h-72 object-cover"
+                    />
+                  </div>
 
-              <p>
-                An active water heater leak can release 40 to 75 gallons of scalding water in minutes, quickly ruining hardwood floors, soaking drywall, and initiating toxic mold proliferation. If you see water flooding around your tank or notice steam blowing vigorously from the Temperature & Pressure (T&P) relief valve, treat this as a true emergency.
-              </p>
-              <p>
-                When you call our emergency line, our dispatch operators will first talk you through immediately shutting off the cold water shutoff valve above the heater and cutting the dedicated circuit breaker or gas supply. We then dispatch the nearest available on-call plumber in Anaheim for rapid arrival, water extraction coordination, and immediate unit swap.
-              </p>
-              <p>
-                Learn more about our local service coverage in <Link href="/locations#fullerton">Fullerton</Link>, <Link href="/locations#orange">Orange</Link>, and <Link href="/locations#garden-grove">Garden Grove</Link>.
-              </p>
-            </div>
+                  {/* Summary */}
+                  <p className="text-base text-slate-700 leading-relaxed font-normal">
+                    {info?.summary || srv.shortDesc}
+                  </p>
 
-            {/* Service Category 3: Tankless Water Heater Solutions */}
-            <div id="tankless" className="space-y-6 pt-4 border-t border-slate-200">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center text-sky-600">
-                  <Flame className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-[#0b2238]">
-                    3. Tankless Water Heater Repair & Descaling
-                  </h3>
-                  <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
-                    Navien, Rinnai, Noritz & Rheem Demand Units
-                  </span>
-                </div>
-              </div>
+                  {/* Key Highlights & Bullets */}
+                  {info?.bullets && (
+                    <div className="bg-[#f4f7fa] p-5 rounded-2xl border border-slate-200 space-y-2">
+                      <span className="text-xs font-extrabold uppercase text-[#0a192f] block tracking-wider">
+                        Key Diagnostics & Deliverables:
+                      </span>
+                      <ul className="space-y-1.5 text-xs sm:text-sm text-slate-700">
+                        {info.bullets.map((b, bIdx) => (
+                          <li key={bIdx} className="flex items-start gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      {info.highlights && (
+                        <p className="text-xs text-[#004b87] font-semibold pt-2 border-t border-slate-200">
+                          {info.highlights}
+                        </p>
+                      )}
+                    </div>
+                  )}
 
-              <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-md">
-                <Image
-                  src="/images/tankless-water-heater.jpg"
-                  alt="Modern tankless water heater installation and repair"
-                  width={1200}
-                  height={500}
-                  className="w-full h-56 sm:h-72 object-cover"
-                />
-              </div>
-
-              <p>
-                Tankless systems offer virtually endless hot water and compact wall-mounted footprints, making them tremendously popular across Anaheim homes. However, because Orange County water is loaded with dissolved calcium and lime, minerals rapidly bake onto the thin copper heat exchanger fins.
-              </p>
-              <p>
-                This scale buildup triggers overheating error codes, sudden flame failures, and the dreaded &quot;cold water sandwich.&quot; Our factory-trained tankless technicians utilize specialized submersible circulation pumps and food-grade virgin descaling solutions to thoroughly clear the heat exchanger, restore full thermal heat transfer, clean intake air screens, and calibrate digital modulating gas valves.
-              </p>
-            </div>
-
-            {/* Service Category 4: Replacement & Code-Compliant Installation */}
-            <div id="replacement" className="space-y-6 pt-4 border-t border-slate-200">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600">
-                  <ShieldCheck className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-[#0b2238]">
-                    4. Water Heater Replacement & Installation
-                  </h3>
-                  <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
-                    Permitted Same-Day Installs with Haul-Away
-                  </span>
-                </div>
-              </div>
-
-              <p>
-                When a water heater tank reaches 10 to 12 years of age or develops rust perforation through the outer casing, replacement is the only safe and cost-effective solution. Our network plumbers carry premium, energy-efficient Bradford White, Rheem, and A.O. Smith units in common 40, 50, and 75-gallon capacities.
-              </p>
-              <p>
-                Every replacement performed through our network strictly satisfies the California Plumbing Code (CPC), including:
-              </p>
-              <ul className="list-disc list-inside space-y-1.5 text-sm text-slate-700 pl-2">
-                <li>Heavy-gauge seismic earthquake strapping anchored directly into wall studs.</li>
-                <li>Thermal expansion tank installation for closed backflow-prevented municipal water meters.</li>
-                <li>South Coast Air Quality Management District (SCAQMD) Rule 1121 compliant ultra-low NOx gas burners.</li>
-                <li>Proper 3/4&quot; copper Temperature & Pressure discharge lines terminated safely to the exterior.</li>
-                <li>City of Anaheim plumbing permit processing and final municipal sign-off.</li>
-              </ul>
-              <p>
-                Find location-specific installation details for <Link href="/locations#brea">Brea</Link> and <Link href="/locations#placentia">Placentia</Link>, or read our guide in the <Link href="/blog">Plumbing Knowledge Base</Link>.
-              </p>
-            </div>
-
-            {/* Service Category 5: Commercial Water Heating Systems */}
-            <div id="commercial" className="space-y-6 pt-4 border-t border-slate-200">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center text-purple-700">
-                  <Zap className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-[#0b2238]">
-                    5. Commercial High-Recovery Water Heaters
-                  </h3>
-                  <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
-                    Hotels, Restaurants, Laundromats & Multi-Family
-                  </span>
-                </div>
-              </div>
-
-              <p>
-                Hot water downtime in a commercial establishment like an Anaheim hotel, commercial kitchen, or salon directly violates Orange County Health Department regulations and halts revenue immediately. Our commercial plumbing pros prioritize after-hours service, dual-recirculating pump repairs, high-BTU gas line sizing, and high-recovery commercial boiler maintenance to guarantee your operation never skips a beat.
-              </p>
-            </div>
+                  {/* Dual Action Strip */}
+                  <div className="pt-2 flex flex-wrap items-center justify-between gap-3 text-xs font-bold">
+                    <Link
+                      href={`/services/${srv.slug}`}
+                      className="text-[#ff5e14] hover:text-[#004b87] hover:underline flex items-center gap-1"
+                    >
+                      Read full 1,000+ word guide for {srv.name} →
+                    </Link>
+                    <a
+                      href={`tel:${BRAND_PHONE}`}
+                      className="inline-flex items-center gap-1.5 bg-[#0a192f] hover:bg-[#ff5e14] text-white px-4 py-2 rounded-lg transition-colors"
+                    >
+                      <Phone className="w-3.5 h-3.5" />
+                      <span>Call for {srv.name}</span>
+                    </a>
+                  </div>
+                </article>
+              );
+            })}
 
             {/* Direct Call Section */}
             <PhoneOnlyCTA />
           </div>
 
-          {/* Sidebar */}
+          {/* Right Sidebar */}
           <div className="lg:col-span-4 space-y-6">
-            <div className="bg-[#0b2238] text-white rounded-3xl p-6 sm:p-8 shadow-xl sticky top-24 border border-slate-800">
-              <span className="text-xs font-bold text-orange-400 uppercase tracking-wider block mb-2">
+            <div className="bg-[#0a192f] text-white rounded-3xl p-6 sm:p-8 shadow-xl sticky top-24 border border-slate-800">
+              <span className="text-xs font-extrabold text-[#ff5e14] uppercase tracking-wider block mb-2">
                 Fast Phone-Only Scheduling
               </span>
               <h3 className="text-2xl font-black mb-3">
-                Speak Directly with an Anaheim Technician
+                All 12 Services On-Call
               </h3>
-              <p className="text-slate-300 text-sm mb-6 leading-relaxed">
-                Skip the wait and speak to real dispatchers right now. We explain your repair options and quote the job clearly before work begins.
+              <p className="text-slate-300 text-xs sm:text-sm mb-6 leading-relaxed">
+                Skip automated web forms and speak directly to our Anaheim dispatch team. We route certified local plumbers carrying universal parts on their trucks.
               </p>
 
               <a
                 href={`tel:${BRAND_PHONE}`}
-                className="w-full flex items-center justify-center gap-3 bg-[#f26522] hover:bg-[#d85413] text-white py-4 px-6 rounded-2xl font-black text-lg tracking-wide shadow-lg transition-all animate-pulse-subtle"
+                className="w-full flex items-center justify-center gap-3 bg-[#ff5e14] hover:bg-[#e04800] text-white py-4 px-6 rounded-2xl font-black text-lg tracking-wide shadow-lg transition-all animate-pulse-subtle"
               >
                 <Phone className="w-5 h-5" />
                 <span>{BRAND_PHONE_DISPLAY}</span>
@@ -249,45 +336,58 @@ export default function ServicesPage() {
 
               <div className="mt-8 pt-6 border-t border-slate-700/80 space-y-3 text-xs text-slate-300">
                 <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-orange-400" /> Average arrival: 60 to 90 mins
+                  <Clock className="w-4 h-4 text-[#ff5e14]" /> Average arrival: 45 to 60 mins
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400" /> Fully insured California contractors
+                  <ShieldCheck className="w-4 h-4 text-emerald-400" /> Fully insured California C-36 contractors
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-sky-400" /> Permits & haul-away handled for you
+                  <CheckCircle2 className="w-4 h-4 text-sky-400" /> Transparent written quotes before work
                 </div>
               </div>
 
+              {/* Jump List for All 12 Services */}
               <div className="mt-8 pt-6 border-t border-slate-700/80">
-                <h4 className="text-xs uppercase font-extrabold tracking-wider text-orange-400 mb-3">
-                  Read Homeowner Guides
+                <h4 className="text-xs uppercase font-extrabold tracking-wider text-[#ff5e14] mb-3">
+                  Jump to Any Service:
                 </h4>
-                <ul className="text-xs space-y-2 text-slate-300">
-                  <li>
-                    <Link href="/blog#hard-water" className="hover:text-white underline">
-                      • How Orange County Hard Water Damages Heaters
+                <div className="space-y-1.5 max-h-72 overflow-y-auto pr-1 text-xs">
+                  {SERVICES.map((s) => (
+                    <a
+                      key={s.id}
+                      href={`#${s.slug}`}
+                      className="block text-slate-300 hover:text-white hover:underline truncate py-0.5"
+                    >
+                      • {s.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Service Areas Directory */}
+              <div className="mt-8 pt-6 border-t border-slate-700/80">
+                <h4 className="text-xs uppercase font-extrabold tracking-wider text-[#ff5e14] mb-3">
+                  Regional Service Hubs:
+                </h4>
+                <div className="flex flex-wrap gap-1.5">
+                  {LOCATIONS.map((loc) => (
+                    <Link
+                      key={loc.id}
+                      href={`/locations/${loc.slug}`}
+                      className="text-xs bg-slate-800 hover:bg-[#ff5e14] text-slate-300 hover:text-white px-2.5 py-1 rounded transition-colors font-semibold"
+                    >
+                      {loc.name}
                     </Link>
-                  </li>
-                  <li>
-                    <Link href="/faq" className="hover:text-white underline">
-                      • Top 10 Water Heater FAQ & Cost Estimates
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/contact" className="hover:text-white underline">
-                      • Contact Details & Coverage Map
-                    </Link>
-                  </li>
-                </ul>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Call Banner */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* 3. Call Banner */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <CallBanner
           headline="Have Questions About Which Service You Need?"
           subtext="Call our Anaheim dispatch line anytime at (456) 789-0123. Describe what you see, and we will send the right specialist."
