@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     "plumber anaheim",
     "orange county water heater repair",
   ],
+  verification: {
+    google: "ARmHZ0RD9x4XbVqxg3-I9r5SVusErDQ3yfjJdVP08YQ",
+  },
   authors: [{ name: BRAND_NAME }],
   robots: {
     index: true,
@@ -105,6 +108,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="google-site-verification" content="ARmHZ0RD9x4XbVqxg3-I9r5SVusErDQ3yfjJdVP08YQ" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
