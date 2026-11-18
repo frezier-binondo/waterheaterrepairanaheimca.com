@@ -130,7 +130,9 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                     ? "/images/boiler-heating.jpg"
                     : service.slug.includes("leak") || service.slug.includes("emergency")
                     ? "/images/pipes-valves.jpg"
-                    : service.slug.includes("installation") || service.slug.includes("replacement")
+                    : service.slug.includes("installation")
+                    ? "/images/water-heater-installation.jpg"
+                    : service.slug.includes("replacement")
                     ? "/images/water-heater-tank.jpg"
                     : service.slug.includes("maintenance")
                     ? "/images/hard-water-scale.jpg"
