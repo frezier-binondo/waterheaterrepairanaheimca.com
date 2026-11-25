@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
 
   return {
     title: `Water Heater Repair in ${location.name}, CA`,
-    description: `Fast water heater repair, replacement, and tankless flush in ${location.name}, CA (${location.zipCodes}). Licensed local pros. Call (456) 789-0123.`,
+    description: `Fast water heater repair, replacement, and tankless flush in ${location.name}, CA (${location.zipCodes}). Licensed local pros. Call (714) 987-1987.`,
   };
 }
 
@@ -243,7 +243,7 @@ export default async function LocationDetailPage({ params }: LocationPageProps) 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <CallBanner
           headline={`Need Emergency Water Heater Service in ${location.name}?`}
-          subtext="Call (456) 789-0123 now to speak directly with an on-call licensed plumbing professional."
+          subtext="Call (714) 987-1987 now to speak directly with an on-call licensed plumbing professional."
         />
       </div>
     </div>

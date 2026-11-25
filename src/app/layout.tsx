@@ -68,7 +68,7 @@ export default function RootLayout({
         "@id": "https://waterheaterrepairanaheimca.com/#organization",
         "name": BRAND_NAME,
         "url": "https://waterheaterrepairanaheimca.com",
-        "telephone": "+14567890123",
+        "telephone": "+17149871987",
         "priceRange": "$$",
         "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
         "address": {

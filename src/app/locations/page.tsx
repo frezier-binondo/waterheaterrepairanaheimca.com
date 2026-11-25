@@ -9,7 +9,7 @@ import PhoneOnlyCTA from "@/components/PhoneOnlyCTA";
 
 export const metadata: Metadata = {
   title: "Water Heater Service Areas Near Anaheim, CA",
-  description: "Prompt water heater repair and installation across Anaheim, Anaheim Hills, Fullerton, Orange, Garden Grove, Brea, and Placentia. Call (456) 789-0123.",
+  description: "Prompt water heater repair and installation across Anaheim, Anaheim Hills, Fullerton, Orange, Garden Grove, Brea, and Placentia. Call (714) 987-1987.",
 };
 
 export default function LocationsPage() {
@@ -327,7 +327,7 @@ export default function LocationsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <CallBanner
           headline="Live in North Orange County and Lost Hot Water?"
-          subtext="Call (456) 789-0123 right now to be matched with an on-call licensed plumber servicing your exact neighborhood."
+          subtext="Call (714) 987-1987 right now to be matched with an on-call licensed plumber servicing your exact neighborhood."
         />
       </div>
     </div>

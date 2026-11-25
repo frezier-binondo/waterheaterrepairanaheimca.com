@@ -28,7 +28,7 @@ import PhoneOnlyCTA from "@/components/PhoneOnlyCTA";
 
 export const metadata: Metadata = {
   title: "Water Heater Repair Anaheim, CA",
-  description: "Fast water heater repair, installation and replacement in Anaheim, CA. Drainhaus theme layout with licensed local pros and upfront quote. Call (456) 789-0123.",
+  description: "Fast water heater repair, installation and replacement in Anaheim, CA. Drainhaus theme layout with licensed local pros and upfront quote. Call (714) 987-1987.",
 };
 
 export default function HomePage() {

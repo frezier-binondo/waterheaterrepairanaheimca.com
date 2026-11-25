@@ -8,7 +8,7 @@ import PhoneOnlyCTA from "@/components/PhoneOnlyCTA";
 
 export const metadata: Metadata = {
   title: "Contact Us & Service Map | Water Heater Repair Anaheim CA",
-  description: "Phone-only 24/7 water heater repair dispatch in Anaheim, CA. Interactive Google map, coverage zones, and licensed plumbing assistance. Call (456) 789-0123.",
+  description: "Phone-only 24/7 water heater repair dispatch in Anaheim, CA. Interactive Google map, coverage zones, and licensed plumbing assistance. Call (714) 987-1987.",
 };
 
 export default function ContactPage() {
@@ -214,7 +214,7 @@ export default function ContactPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <CallBanner
           headline="Ready to Talk to an Anaheim Water Heater Specialist?"
-          subtext="Call (456) 789-0123 now. Real local dispatchers ready to assist you."
+          subtext="Call (714) 987-1987 now. Real local dispatchers ready to assist you."
         />
       </div>
     </div>

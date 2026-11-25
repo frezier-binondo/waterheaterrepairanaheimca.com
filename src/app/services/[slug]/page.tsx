@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   return {
     title: `${service.name} in Anaheim, CA`,
-    description: `${service.shortDesc} Fast same-day water heater service across Anaheim. Licensed California contractors. Call (456) 789-0123.`,
+    description: `${service.shortDesc} Fast same-day water heater service across Anaheim. Licensed California contractors. Call (714) 987-1987.`,
   };
 }
 
@@ -414,7 +414,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <CallBanner
           headline={`Need Fast ${service.name} in Anaheim?`}
-          subtext="Call (456) 789-0123 now to speak directly with an on-call licensed plumbing professional."
+          subtext="Call (714) 987-1987 now to speak directly with an on-call licensed plumbing professional."
         />
       </div>
     </div>

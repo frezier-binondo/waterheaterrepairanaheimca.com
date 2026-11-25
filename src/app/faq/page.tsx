@@ -8,7 +8,7 @@ import PhoneOnlyCTA from "@/components/PhoneOnlyCTA";
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions | Anaheim Water Heater Repair & Costs",
-  description: "Get answers to 10 crucial water heater questions: repair costs, tank vs. tankless, emergency leaking steps, Anaheim permits, and flushing. Call (456) 789-0123.",
+  description: "Get answers to 10 crucial water heater questions: repair costs, tank vs. tankless, emergency leaking steps, Anaheim permits, and flushing. Call (714) 987-1987.",
 };
 
 export default function FAQPage() {
@@ -142,7 +142,7 @@ export default function FAQPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <CallBanner
           headline="Ready to Get Your Hot Water Restored Today?"
-          subtext="Call our Anaheim dispatch hotline at (456) 789-0123 for immediate priority assistance."
+          subtext="Call our Anaheim dispatch hotline at (714) 987-1987 for immediate priority assistance."
         />
       </div>
     </div>

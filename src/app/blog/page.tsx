@@ -9,7 +9,7 @@ import PhoneOnlyCTA from "@/components/PhoneOnlyCTA";
 
 export const metadata: Metadata = {
   title: "Plumbing & Water Heater Blog | Anaheim Homeowner Guides",
-  description: "Expert water heater maintenance, troubleshooting error codes, and hard water prevention guides for Anaheim & Orange County homeowners. Call (456) 789-0123.",
+  description: "Expert water heater maintenance, troubleshooting error codes, and hard water prevention guides for Anaheim & Orange County homeowners. Call (714) 987-1987.",
 };
 
 export default function BlogPage() {
@@ -250,7 +250,7 @@ export default function BlogPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <CallBanner
           headline="Suspect Your Water Heater Has Mineral Sediment?"
-          subtext="Call (456) 789-0123 today to schedule a comprehensive sediment flush and safety inspection before your tank ruptures."
+          subtext="Call (714) 987-1987 today to schedule a comprehensive sediment flush and safety inspection before your tank ruptures."
         />
       </div>
     </div>

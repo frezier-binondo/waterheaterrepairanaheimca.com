@@ -26,7 +26,7 @@ import PhoneOnlyCTA from "@/components/PhoneOnlyCTA";
 
 export const metadata: Metadata = {
   title: "Water Heater Services in Anaheim, CA",
-  description: "Explore all 12 water heater services in Anaheim CA: repair, emergency burst containment, tankless descaling, gas/electric repair, maintenance, commercial systems. Call (456) 789-0123.",
+  description: "Explore all 12 water heater services in Anaheim CA: repair, emergency burst containment, tankless descaling, gas/electric repair, maintenance, commercial systems. Call (714) 987-1987.",
 };
 
 // Map each service slug to its dedicated custom photo
@@ -390,7 +390,7 @@ export default function ServicesPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <CallBanner
           headline="Have Questions About Which Service You Need?"
-          subtext="Call our Anaheim dispatch line anytime at (456) 789-0123. Describe what you see, and we will send the right specialist."
+          subtext="Call our Anaheim dispatch line anytime at (714) 987-1987. Describe what you see, and we will send the right specialist."
         />
       </div>
     </div>

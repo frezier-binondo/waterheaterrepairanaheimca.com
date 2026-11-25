@@ -1,6 +1,6 @@
 export const BRAND_NAME = "Water Heater Repair in Anaheim CA";
-export const BRAND_PHONE = "14567890123";
-export const BRAND_PHONE_DISPLAY = "(456) 789-0123";
+export const BRAND_PHONE = "17149871987";
+export const BRAND_PHONE_DISPLAY = "(714) 987-1987";
 export const BRAND_ADDRESS = {
   street: "Anaheim Blvd & Lincoln Ave",
   city: "Anaheim",
@@ -285,7 +285,7 @@ export const FAQS: FAQItem[] = [
   },
   {
     question: "What should I do immediately if my water heater is leaking from the bottom?",
-    answer: "First, shut off the cold water supply valve located on the piping directly above the heater by turning the handle clockwise. Second, kill the power source: turn off the dedicated double-pole breaker for electric units, or rotate the gas valve dial to 'OFF' for gas heaters. Finally, call (456) 789-0123 immediately. If the steel tank itself is leaking, the tank has failed and will require full replacement.",
+    answer: "First, shut off the cold water supply valve located on the piping directly above the heater by turning the handle clockwise. Second, kill the power source: turn off the dedicated double-pole breaker for electric units, or rotate the gas valve dial to 'OFF' for gas heaters. Finally, call (714) 987-1987 immediately. If the steel tank itself is leaking, the tank has failed and will require full replacement.",
   },
   {
     question: "Do water heater installations in Anaheim require building permits and inspections?",
