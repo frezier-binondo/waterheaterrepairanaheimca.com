@@ -21,10 +21,11 @@ export default function PhoneOnlyCTA() {
         <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0">
           <a
             href={`tel:${BRAND_PHONE}`}
-            className="flex items-center gap-2.5 bg-[#f26522] hover:bg-[#d85413] text-white px-7 py-3.5 rounded-full font-black text-lg shadow-lg hover:shadow-xl transition-all"
+            style={{ color: "#ffffff", textDecoration: "none" }}
+            className="flex items-center gap-2.5 bg-[#ff5e14] hover:bg-[#e04800] !text-white text-white px-7 py-3.5 rounded-full font-black text-lg shadow-lg hover:shadow-xl transition-all"
           >
-            <Phone className="w-5 h-5" />
-            <span>{BRAND_PHONE_DISPLAY}</span>
+            <Phone className="w-5 h-5 !text-white text-white shrink-0" style={{ color: "#ffffff" }} />
+            <span className="!text-white text-white font-black" style={{ color: "#ffffff" }}>{BRAND_PHONE_DISPLAY}</span>
           </a>
         </div>
       </div>

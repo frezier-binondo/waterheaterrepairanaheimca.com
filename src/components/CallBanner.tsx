@@ -37,10 +37,11 @@ export default function CallBanner({
         <div className="shrink-0 flex flex-col items-center gap-2">
           <a
             href={`tel:${BRAND_PHONE}`}
-            className="flex items-center gap-3 bg-[#ff5e14] hover:bg-[#e04800] text-white px-8 py-4 rounded-xl font-black text-xl sm:text-2xl tracking-wide shadow-xl hover:shadow-2xl active:scale-95 transition-all animate-pulse-subtle"
+            style={{ color: "#ffffff", textDecoration: "none" }}
+            className="flex items-center gap-3 bg-[#ff5e14] hover:bg-[#e04800] !text-white text-white px-8 py-4 rounded-xl font-black text-xl sm:text-2xl tracking-wide shadow-xl hover:shadow-2xl active:scale-95 transition-all animate-pulse-subtle"
           >
-            <Phone className="w-6 h-6 animate-bounce" />
-            <span>{BRAND_PHONE_DISPLAY}</span>
+            <Phone className="w-6 h-6 animate-bounce !text-white text-white" style={{ color: "#ffffff" }} />
+            <span className="!text-white text-white" style={{ color: "#ffffff" }}>{BRAND_PHONE_DISPLAY}</span>
           </a>
           <span className="text-xs text-slate-400 font-medium tracking-wide">
             Tap to call directly from your mobile phone

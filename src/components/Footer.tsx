@@ -22,7 +22,8 @@ export default function Footer() {
               href={GOOGLE_MAPS_DIRECT_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#ff5e14] hover:bg-[#e04800] text-white px-4 py-2 rounded-lg text-xs font-bold transition-colors w-fit"
+              style={{ color: "#ffffff", textDecoration: "none" }}
+              className="inline-flex items-center gap-2 bg-[#ff5e14] hover:bg-[#e04800] !text-white text-white px-4 py-2 rounded-lg text-xs font-bold transition-colors w-fit"
             >
               <MapPin className="w-4 h-4" /> Open in Google Maps <ExternalLink className="w-3.5 h-3.5" />
             </a>

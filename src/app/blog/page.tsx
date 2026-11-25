@@ -209,10 +209,11 @@ export default function BlogPage() {
 
               <a
                 href={`tel:${BRAND_PHONE}`}
-                className="w-full flex items-center justify-center gap-3 bg-[#f26522] hover:bg-[#d85413] text-white py-4 px-6 rounded-2xl font-black text-lg tracking-wide shadow-lg transition-all animate-pulse-subtle"
+                style={{ color: "#ffffff", textDecoration: "none" }}
+                className="w-full flex items-center justify-center gap-3 bg-[#ff5e14] hover:bg-[#e04800] !text-white text-white py-4 px-6 rounded-2xl font-black text-lg tracking-wide shadow-lg transition-all animate-pulse-subtle"
               >
-                <Phone className="w-5 h-5" />
-                <span>{BRAND_PHONE_DISPLAY}</span>
+                <Phone className="w-5 h-5 !text-white text-white" style={{ color: "#ffffff" }} />
+                <span className="!text-white text-white" style={{ color: "#ffffff" }}>{BRAND_PHONE_DISPLAY}</span>
               </a>
 
               <div className="mt-8 pt-6 border-t border-slate-700/80">

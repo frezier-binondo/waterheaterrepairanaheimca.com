@@ -240,10 +240,11 @@ export default function Header() {
           <div className="flex items-center gap-3 py-2.5">
             <a
               href={`tel:${BRAND_PHONE}`}
-              className="bg-[#ff5e14] hover:bg-[#e04800] text-white font-black text-sm px-5 py-2.5 rounded-lg flex items-center gap-2 shadow-md transition-all active:scale-95"
+              style={{ color: "#ffffff", textDecoration: "none" }}
+              className="bg-[#ff5e14] hover:bg-[#e04800] !text-white text-white font-black text-sm px-5 py-2.5 rounded-lg flex items-center gap-2 shadow-md transition-all active:scale-95"
             >
-              <Phone className="w-4 h-4" />
-              <span>Call: {BRAND_PHONE_DISPLAY}</span>
+              <Phone className="w-4 h-4 !text-white text-white" style={{ color: "#ffffff" }} />
+              <span className="!text-white text-white" style={{ color: "#ffffff" }}>Call: {BRAND_PHONE_DISPLAY}</span>
             </a>
 
             {/* Mobile menu hamburger */}
@@ -338,9 +339,10 @@ export default function Header() {
           <div className="pt-3">
             <a
               href={`tel:${BRAND_PHONE}`}
-              className="w-full flex items-center justify-center gap-2 bg-[#ff5e14] text-white py-3 rounded-lg font-black text-base shadow-lg"
+              style={{ color: "#ffffff", textDecoration: "none" }}
+              className="w-full flex items-center justify-center gap-2 bg-[#ff5e14] hover:bg-[#e04800] !text-white text-white py-3 rounded-lg font-black text-base shadow-lg"
             >
-              <Phone className="w-5 h-5" /> Call Now: {BRAND_PHONE_DISPLAY}
+              <Phone className="w-5 h-5 !text-white text-white" style={{ color: "#ffffff" }} /> <span className="!text-white text-white" style={{ color: "#ffffff" }}>Call Now: {BRAND_PHONE_DISPLAY}</span>
             </a>
           </div>
         </div>

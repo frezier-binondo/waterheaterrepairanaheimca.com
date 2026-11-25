@@ -59,10 +59,11 @@ export default function HomePage() {
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <a
                 href={`tel:${BRAND_PHONE}`}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#ff5e14] hover:bg-[#e04800] text-white px-8 py-4 rounded-xl font-black text-lg tracking-wide shadow-xl hover:shadow-2xl active:scale-95 transition-all animate-pulse-subtle"
+                style={{ color: "#ffffff", textDecoration: "none" }}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#ff5e14] hover:bg-[#e04800] !text-white text-white px-8 py-4 rounded-xl font-black text-lg tracking-wide shadow-xl hover:shadow-2xl active:scale-95 transition-all animate-pulse-subtle"
               >
-                <Phone className="w-6 h-6 animate-bounce" />
-                <span>Call Now: {BRAND_PHONE_DISPLAY}</span>
+                <Phone className="w-6 h-6 animate-bounce !text-white text-white" style={{ color: "#ffffff" }} />
+                <span className="!text-white text-white" style={{ color: "#ffffff" }}>Call Now: {BRAND_PHONE_DISPLAY}</span>
               </a>
 
               <Link
@@ -469,10 +470,11 @@ export default function HomePage() {
 
               <a
                 href={`tel:${BRAND_PHONE}`}
-                className="w-full flex items-center justify-center gap-2.5 bg-[#ff5e14] hover:bg-[#e04800] text-white py-4 px-6 rounded-xl font-black text-lg tracking-wide shadow-lg transition-all"
+                style={{ color: "#ffffff", textDecoration: "none" }}
+                className="w-full flex items-center justify-center gap-2.5 bg-[#ff5e14] hover:bg-[#e04800] !text-white text-white py-4 px-6 rounded-xl font-black text-lg tracking-wide shadow-lg transition-all"
               >
-                <Phone className="w-5 h-5" />
-                <span>{BRAND_PHONE_DISPLAY}</span>
+                <Phone className="w-5 h-5 !text-white text-white" style={{ color: "#ffffff" }} />
+                <span className="!text-white text-white" style={{ color: "#ffffff" }}>{BRAND_PHONE_DISPLAY}</span>
               </a>
 
               <div className="mt-6 pt-6 border-t border-slate-800 space-y-2.5 text-xs text-slate-300">

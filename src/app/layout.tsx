@@ -131,9 +131,10 @@ export default function RootLayout({
           </div>
           <a
             href={`tel:${BRAND_PHONE}`}
-            className="flex-1 max-w-[200px] flex items-center justify-center gap-2 bg-[#f26522] hover:bg-[#d85413] text-white py-2.5 px-4 rounded-xl font-black text-sm shadow-lg animate-pulse-subtle"
+            style={{ color: "#ffffff", textDecoration: "none" }}
+            className="flex-1 max-w-[200px] flex items-center justify-center gap-2 bg-[#ff5e14] hover:bg-[#e04800] !text-white text-white py-2.5 px-4 rounded-xl font-black text-sm shadow-lg animate-pulse-subtle"
           >
-            <span>Call Now</span>
+            <span style={{ color: "#ffffff" }} className="!text-white text-white">Call Now</span>
           </a>
         </div>
       </body>

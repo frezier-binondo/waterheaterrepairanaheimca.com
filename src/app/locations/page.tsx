@@ -31,10 +31,11 @@ export default function LocationsPage() {
           <div className="pt-2">
             <a
               href={`tel:${BRAND_PHONE}`}
-              className="inline-flex items-center gap-2.5 bg-[#f26522] hover:bg-[#d85413] text-white px-7 py-3 rounded-full font-bold text-base shadow-lg transition-all animate-pulse-subtle"
+              style={{ color: "#ffffff", textDecoration: "none" }}
+              className="inline-flex items-center gap-2.5 bg-[#ff5e14] hover:bg-[#e04800] !text-white text-white px-7 py-3 rounded-full font-bold text-base shadow-lg transition-all animate-pulse-subtle"
             >
-              <Phone className="w-5 h-5" />
-              <span>Call Local Dispatch: {BRAND_PHONE_DISPLAY}</span>
+              <Phone className="w-5 h-5 !text-white text-white" style={{ color: "#ffffff" }} />
+              <span className="!text-white text-white" style={{ color: "#ffffff" }}>Call Local Dispatch: {BRAND_PHONE_DISPLAY}</span>
             </a>
           </div>
         </div>
@@ -267,10 +268,11 @@ export default function LocationsPage() {
 
               <a
                 href={`tel:${BRAND_PHONE}`}
-                className="w-full flex items-center justify-center gap-3 bg-[#f26522] hover:bg-[#d85413] text-white py-4 px-6 rounded-2xl font-black text-lg tracking-wide shadow-lg transition-all animate-pulse-subtle"
+                style={{ color: "#ffffff", textDecoration: "none" }}
+                className="w-full flex items-center justify-center gap-3 bg-[#ff5e14] hover:bg-[#e04800] !text-white text-white py-4 px-6 rounded-2xl font-black text-lg tracking-wide shadow-lg transition-all animate-pulse-subtle"
               >
-                <Phone className="w-5 h-5" />
-                <span>{BRAND_PHONE_DISPLAY}</span>
+                <Phone className="w-5 h-5 !text-white text-white" style={{ color: "#ffffff" }} />
+                <span className="!text-white text-white" style={{ color: "#ffffff" }}>{BRAND_PHONE_DISPLAY}</span>
               </a>
 
               <div className="mt-8 pt-6 border-t border-slate-700/80 space-y-3 text-xs text-slate-300">

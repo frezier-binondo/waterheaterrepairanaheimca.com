@@ -30,8 +30,8 @@ body {
   overflow-x: hidden;
 }
 
-/* Drainhaus in-content body links styling required by prompt */
-.content-body a {
+/* Drainhaus in-content body links styling - applies ONLY to inline text links, never button elements */
+.content-body a:not([class*="bg-"]):not([class*="rounded-"]) {
   color: #ff5e14;
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
@@ -40,12 +40,69 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
-.content-body a:hover {
+.content-body a:not([class*="bg-"]):not([class*="rounded-"]):hover {
   color: #004b87;
   background-color: #fff3ed;
   padding: 1px 4px;
   border-radius: 4px;
   text-decoration-thickness: 2px;
+}
+
+/* Ensure ALL elements, buttons, icons, and text with solid orange background are ALWAYS pure white */
+[class*="bg-[#ff5e14]"],
+[class*="bg-[#f26522]"],
+[class*="bg-[#e04800]"],
+[class*="bg-[#d85413]"],
+.bg-orange-500,
+.bg-orange-600,
+a[class*="bg-[#ff5e14]"],
+a[class*="bg-[#f26522]"],
+a[class*="bg-[#e04800]"],
+a[class*="bg-[#d85413]"] {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+[class*="bg-[#ff5e14]"] *,
+[class*="bg-[#f26522]"] *,
+[class*="bg-[#e04800]"] *,
+[class*="bg-[#d85413]"] *,
+.bg-orange-500 *,
+.bg-orange-600 *,
+a[class*="bg-[#ff5e14]"] *,
+a[class*="bg-[#f26522]"] *,
+a[class*="bg-[#e04800]"] *,
+a[class*="bg-[#d85413]"] * {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+[class*="bg-[#ff5e14]"]:hover,
+[class*="bg-[#f26522]"]:hover,
+[class*="bg-[#e04800]"]:hover,
+[class*="bg-[#d85413]"]:hover,
+.bg-orange-500:hover,
+.bg-orange-600:hover,
+a[class*="bg-[#ff5e14]"]:hover,
+a[class*="bg-[#f26522]"]:hover,
+a[class*="bg-[#e04800]"]:hover,
+a[class*="bg-[#d85413]"]:hover {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+[class*="bg-[#ff5e14]"]:hover *,
+[class*="bg-[#f26522]"]:hover *,
+[class*="bg-[#e04800]"]:hover *,
+[class*="bg-[#d85413]"]:hover *,
+.bg-orange-500:hover *,
+.bg-orange-600:hover *,
+a[class*="bg-[#ff5e14]"]:hover *,
+a[class*="bg-[#f26522]"]:hover *,
+a[class*="bg-[#e04800]"]:hover *,
+a[class*="bg-[#d85413]"]:hover * {
+  color: #ffffff !important;
+  text-decoration: none !important;
 }
 
 /* Animations */

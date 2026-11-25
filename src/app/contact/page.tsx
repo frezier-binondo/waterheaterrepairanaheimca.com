@@ -30,10 +30,11 @@ export default function ContactPage() {
           <div className="pt-2">
             <a
               href={`tel:${BRAND_PHONE}`}
-              className="inline-flex items-center gap-2.5 bg-[#f26522] hover:bg-[#d85413] text-white px-8 py-3.5 rounded-full font-black text-lg shadow-xl transition-all animate-pulse-subtle"
+              style={{ color: "#ffffff", textDecoration: "none" }}
+              className="inline-flex items-center gap-2.5 bg-[#ff5e14] hover:bg-[#e04800] !text-white text-white px-8 py-3.5 rounded-full font-black text-lg shadow-xl transition-all animate-pulse-subtle"
             >
-              <Phone className="w-5 h-5 animate-bounce" />
-              <span>Call Dispatch: {BRAND_PHONE_DISPLAY}</span>
+              <Phone className="w-5 h-5 animate-bounce !text-white text-white" style={{ color: "#ffffff" }} />
+              <span className="!text-white text-white" style={{ color: "#ffffff" }}>Call Dispatch: {BRAND_PHONE_DISPLAY}</span>
             </a>
           </div>
         </div>
@@ -68,9 +69,10 @@ export default function ContactPage() {
                   href={GOOGLE_MAPS_DIRECT_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-[#f26522] hover:bg-[#d85413] text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-colors shrink-0 w-fit"
+                  style={{ color: "#ffffff", textDecoration: "none" }}
+                  className="inline-flex items-center gap-2 bg-[#ff5e14] hover:bg-[#e04800] !text-white text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-colors shrink-0 w-fit"
                 >
-                  <MapPin className="w-4 h-4" /> Open in Google Maps <ExternalLink className="w-3.5 h-3.5" />
+                  <MapPin className="w-4 h-4 !text-white text-white" style={{ color: "#ffffff" }} /> Open in Google Maps <ExternalLink className="w-3.5 h-3.5 !text-white text-white" style={{ color: "#ffffff" }} />
                 </a>
               </div>
 
